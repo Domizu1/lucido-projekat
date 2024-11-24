@@ -1,0 +1,647 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #16283b;
+    margin: 0;
+}
+
+.navbar {
+    position: fixed; /* Fixed position to keep it visible during scrolling */
+    top: 0; /* Stick to the top */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(34, 73, 106, 0.9); /* Slight transparency */
+    padding: 10px 10px;
+    text-align: center;
+    width: fit-content;
+    margin: 20px auto;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10; /* Ensures it stays on top of other content */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: #f3f7fc;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 15px; /* Dodaj padding za više prostora oko linka */
+    position: relative;
+    border-radius: 15px; /* Zaobljeni uglovi pozadine */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Dodaj tranziciju za sve efekte */
+}
+
+
+.navbar a:hover {
+    color: #1f1e24; /* Menja boju teksta */
+    background-color: #c8deef; /* boja za hover */
+    transform: scale(1.1);
+}
+
+/* Dodavanje podvlačenja koristeći pseudo-element ( za ne daj boze
+.navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    /* transform: scaleX(0); Početno stanje - linija skrivena */
+    /* transform-origin: bottom right; */
+    /* transition: transform 0.3s ease; Tranzicija za podvlačenje */
+/* } */ 
+
+.navbar a:hover::after {
+    transform: scaleX(1); /* Prikazivanje linije na hover */
+    transform-origin: bottom left;
+}
+
+
+.hero-section {
+    position: relative;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the right */
+    justify-content: center; /* Centers vertically */
+    background-image: url(/slike/car.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section h1 {
+    position: relative;
+    color: #c8deef;
+    z-index: 2;
+    font-size: 3.5rem;
+    margin: 0;/* Removes padding to keep it close to the subheading */
+    /* margin-right: 20px; */
+    margin-top: -240px;
+    background-color: black;
+    padding:5px;
+}
+.first-word {
+    color:  #98c1e1; /* Change this to the desired color */
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3.5rem;
+    padding: 10px;
+}
+
+
+.subheading {
+    position: relative;
+    color: #c8deef;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    z-index: 2;
+    padding: 20px;
+    margin-right: 0px;
+    margin-top: -10px;
+    background-color: black;
+}
+.extra-text {
+    position: absolute;
+    bottom: 100px; /* Increase this value to move it higher */
+    right: 60px; /* Increase this value to move it more to the left */  
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    z-index: 2; /* Ensure it appears above the background */
+}
+
+.card {
+    /* color used to softly clip top and bottom of the .words container */
+    --bg-color: rgb(0, 0, 0);
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+  }
+  .loader {
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+  }
+  
+  .words {
+    overflow: hidden;
+    position: relative;
+    background: none; /* Ensure no background color is applied */
+    font-size: 1.5rem;
+  }
+  .words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: none; /* Remove the gradient background */
+    z-index: 20;
+}
+  
+  .word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #98c1e1;
+    animation: spin_4991 6s infinite;
+  }
+  
+  @keyframes spin_4991 {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    10% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    25% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    35% {
+        -webkit-transform: translateY(-200%);
+        transform: translateY(-200%);
+    }
+    50% {
+        -webkit-transform: translateY(-200%);
+        transform: translateY(-200%);
+    }
+    60% {
+        -webkit-transform: translateY(-300%);
+        transform: translateY(-300%);
+    }
+    75% {
+        -webkit-transform: translateY(-300%);
+        transform: translateY(-300%);
+    }
+    85% {
+        -webkit-transform: translateY(-400%);
+        transform: translateY(-400%);
+    }
+    100% {
+        -webkit-transform: translateY(0); /* Return to the start position */
+        transform: translateY(0);
+    }
+}
+
+.about-section {
+    background-color:#3d85ba;
+    /* background-image:url(slike/proba.avif); */
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    color: white;
+    text-align: center;
+    width: 70%;
+    margin: 20px auto;
+    background-image: linear-gradient(to right,#02223d, #3d85ba);
+    line-height: 1.8;
+    border-radius: 10px;
+}
+
+.about-section h2 {
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1rem;
+    text-align: start;
+    line-height: 1.8;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-width: 800px; /* maksimalna širina za poboljšanje čitljivosti */
+    margin-left: auto;
+    margin-right: auto;
+}
+ /* Video Section Styles */
+ .video-section {
+    background-color: #16283b;
+    background-image: url(slike/proba1.avif);
+    padding: 40px 20px; /* Increased padding */
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.video-section h2 {
+    font-size: 2em; /* Slightly larger font size */
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.801);
+    padding: 10px; /* Adds padding for better spacing around text */
+    display: inline-block; /* Ensures width doesn't stretch to the full width */
+    border-radius: 8px; /* Optional: Rounds the corners of the h2 background */
+    max-width: 100%; /* Ensures h2 doesn't exceed its container's width */
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px; /* Increased padding for a cleaner look */
+    background-color: #213e59;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Softer, larger shadow for depth */
+}
+
+.video-container video {
+    width: 65%;
+    max-width: 700px;
+    background-color: #c8deef33;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Enhanced shadow for the video */
+}
+
+.video-description {
+    width: 30%;
+    max-width: 300px;
+    text-align: left;
+    color: #d0e5f5; /* Softer, slightly lighter text color */
+}
+
+.video-description h3 {
+    font-size: 1.6em; /* Slightly larger title */
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.video-description p {
+    font-size: 1.1em; /* Slightly larger font size */
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-container video, .video-description {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+.product-section {
+    text-align: center;
+    margin: 20px auto;
+}
+.product-section button {
+    padding: 15px 30px;
+    font-size: 1em;
+    border: none;
+    background-color: #d0d0d0;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.product-section button:hover {
+    background-color: #b0b0b0;
+    transform: translateY(-3px); /* Podizanje dugmeta */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Dodaj senku za efekat lebdenja */
+    border-radius: 10px;
+}
+.content-section {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    justify-content: center;
+}
+.content-section p {
+    flex: 1;
+    font-size: 0.9em;
+    color: #555;
+    padding: 0 20px;
+}
+.image-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    margin-right: 20px;
+}
+.reverse .image-placeholder {
+    order: 2;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+
+.flip-card-section {
+    display: flex;
+    justify-content: space-around; /* Ensures equal spacing between cards */
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 15px; /* Smanjen razmak između kartica */
+    padding: 40px;
+    background-image: linear-gradient(to bottom, #234769, #16283b); /* Dodan linearni gradijent */
+    background-color: #16283b; /* Rezervna boja ako gradijent nije podržan */
+    border-radius: 15px; /* Dodaje zaobljene uglove za sekciju */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Dodaje blag efekat senke */
+}
+
+
+
+.flip-card {
+    background-color: transparent;
+    width: 250px; /* Adjust card width */
+    height: 350px; /* Adjust card height */
+    perspective: 1000px; /* Create a 3D perspective */
+    margin: 5px; /* Smanjen razmak između kartica */
+}
+
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back face when not visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px; /* Rounded corners */
+    background-image: linear-gradient(to bottom, #38638b, #0f304e);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+}
+
+.flip-card-front {
+    background-color: #3d85ba; /* Front face color */
+    color: white;
+}
+
+.flip-card-back {
+    background-color:#25557f;
+    color: white;
+    transform: rotateY(180deg); /* Position the back side initially */
+}
+
+/* .flip-card p.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.flip-card p {
+    font-size: 1rem;
+    margin: 10px;
+} */
+
+.flip-card:nth-child(1) .flip-card-front {
+    background-image: url(slike/flipcard1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.flip-card:nth-child(1) .flip-card-back {
+    background-color:#25557f;
+}
+
+.flip-card:nth-child(2) .flip-card-front {
+    background-image: url(slike/flipcard2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.flip-card:nth-child(2) .flip-card-back {
+    background-color:#25557f;
+}
+
+.flip-card:nth-child(3) .flip-card-front {
+    background-image: url(slike/flipcard3.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.flip-card:nth-child(3) .flip-card-back {
+    background-color:#25557f;
+}
+
+.flip-card:nth-child(4) .flip-card-front {
+    background-image: url(slike/flipcard4.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.flip-card:nth-child(4) .flip-card-back {
+    background-color:#25557f;
+}
+/* General styles for all front and back card text */
+.flip-card-front p,
+.flip-card-back p {
+    margin: 10;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Specific styles for front card text */
+.napred1 {
+    font-size: 2rem;
+    color: #e6eff8;;
+    margin-top: 50px;
+    border-bottom: solid white 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
+    font-weight: bold; /* Make the text bold */
+}
+
+.napred2 {
+    font-size: 2rem;
+    color: #e6eff8;;
+    margin-top: 50px;
+    border-bottom: solid white 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
+    font-weight: bold; /* Make the text bold */
+}
+
+.napred3 {
+    font-size: 2rem;
+    color: #e6eff8;;
+    margin-top: 50px;
+    border-bottom: solid white 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
+    font-weight: bold; /* Make the text bold */
+}
+
+.napred4 {
+    font-size: 2rem;
+    color: #e6eff8;;
+    margin-top: 50px;
+    border-bottom: solid white 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Specific styles for back card text */
+.nazad1 {
+    font-size: 1.5rem;
+    color: #e6eff8;
+    margin-top: 30px; /* Moves text slightly down */
+}
+
+.nazad2 {
+    font-size: 1.5rem;
+    color: #e6eff8;
+    margin-top: 20px;
+}
+
+.nazad3 {
+    font-size: 1.5rem;
+    color: #e6eff8;
+    margin-top: 25px;
+}
+
+.nazad4 {
+    font-size: 1.5rem;
+    color: #e6eff8;
+    margin-top: 15px;
+}
+
+/* Adjust alignment for all card text */
+.flip-card-front,
+.flip-card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Start from top */
+    padding-top: 10px; /* Add some space from the top */
+}
+
+/* .flip-card-front p:hover,
+.flip-card-back p:hover {
+    color: #ffcc00;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, color 0.3s ease;
+} */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flip-card-section {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 30px;
+    }
+
+    .flip-card {
+        width: 80%; /* Make cards responsive */
+        height: auto;
+    }
+}
+.podnaslov{
+    font-size: 2em;
+    /* margin-bottom: 25px; */
+    color: #ffffff;
+    font-weight: bold;
+    /* font-weight: bold;
+    background-color:#25557f; */
+    padding: 10px; /* Adds padding for better spacing around text */
+    display: inline-block; /* Ensures width doesn't stretch to the full width */
+    border-radius: 8px; /* Optional: Rounds the corners of the h2 background */
+    max-width: 100%; /* Ensures h2 doesn't exceed its container's width */
+}
+.footer {
+    background-color: #234769;
+    color: #ffffffcc;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #444;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3d85ba;
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social-icons a:hover {
+    transform: translateY(-5px); /* Move icon up slightly on hover */
+    background-color: #ffffff;
+    color: #234769;
+}
+
+.footer-social-icons a i {
+    transition: color 0.3s ease;
+}
+.opis{
+    font-size: 1.5rem;
+    font-weight:200;
+}
+.tag{
+    font-size: 1rem;
+}
