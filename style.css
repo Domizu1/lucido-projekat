@@ -715,6 +715,9 @@ body {
     .flip-card {
         width: 80%;
     }
+    .flip-card-inner.active {
+        transform: rotateY(180deg);
+    }
 }
 .podnaslov{
     font-size: 2em;
