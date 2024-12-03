@@ -1,69 +1,77 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lucido Detailing</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/737616ad0b.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucido Detailing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/737616ad0b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
     <body>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#ponuda">Ponuda</a></li>
+        <div class="burger-menu">
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="burger-nav">
                 <li><a href="#home">Početna</a></li>
                 <li><a href="#about">O Nama</a></li>
-                <li><a href="#product">Galerija</a></li>
+                <li><a href="#product">Ponuda</a></li>
+                <li><a href="#gallery">Galerija</a></li>
+            </ul>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#about">O Nama</a></li>
+                <li><a href="#product">Ponuda</a></li>
+                <li><a href="#gallery">Galerija</a></li>
             </ul>
         </nav>
         <header id="home" class="hero-section">
             <div class="contact-info">
-                <p>Email: <a href="mailto:info@lucidodetailing.com">info@lucidodetailing.com</a></p>
-                <p>Telefon: <a href="tel:+381601234567">+381 60 123 4567</a></p>
+                <p>Email: <a href="mailto:Lucidoo2024@gmail.com">Lucidoo2024@gmail.com</a></p>
+                <p>Telefon: <a href="tel:+381 65 8828422">+381 60 123 4567</a></p>
             </div>
             <h1><span class="first-word">LUCIDO</span> DETAILING</h1>
             <div class="subheading">
                 Premium usluge detaljnog čišćenja automobila za očuvanje novog izgleda vašeg vozila
             </div>
-            <button class="cta-button">Pogledaj ponudu</button>
+            <button class="cta-button" onclick="scrollToProduct()">Pogledaj ponudu</button>
             <!--! Burger menu bez js -->
-            <!-- <input type="checkbox" name="" id="">
-            <div class="burger">
-                <ul>
-                    <li>11</li>
-                    <li>21</li>
-                    <li>31</li>
-                    <li>41</li>
-                </ul>
-            </div> -->
             <div class="extra-text card-wrapper">
                 <div class="card">
                     <div class="loader">
-                        <p>NAJBOLJE</p>
+                        <p>NAJBOLJE </p>
                         <div class="words">
-                            <span class="word">DETALJNO CISCENJE&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <span class="word">PPF ENTERIJERA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <span class="word">POLIRANJE ENTERIJERA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span class="word">DETALJNO CISCENJE</span>
+                            <span class="word">PPF ENTERIJERA</span>
+                            <span class="word">POLIRANJE ENTERIJERA</span>
                             <span class="word">PREMIUM SPOLJNO PRANJE</span>
-                            <span class="word">POLIRANJE ENTERIJERA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span class="word">POLIRANJE ENTERIJERA</span>
                         </div>
                 </div>
             </div>
         </header>
 
         <section id="about" class="about-section">
-            <h2>O NAMA</h2>
+            <h2>O NAŠOJ FIRMI</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sequi beatae tenetur aliquam autem sit quos eum, ab modi quod nostrum vel. Officia impedit adipisci autem esse maxime veritatis commodi reprehenderit doloremque nam, dicta vel explicabo aliquid numquam accusantium sunt! Vel quisquam, pariatur, recusandae ipsa dolore quas perferendis hic asperiores cumque saepe veritatis voluptate! Beatae, reprehenderit! Ex ipsam reiciendis delectus distinctio sed dolor eligendi tempora. Quae velit labore explicabo qui neque error illo amet. Cumque modi nihil ad, vero eveniet iste? Voluptate, non ducimus! Totam obcaecati laudantium officia, magnam quo quidem tempore corrupti odit, distinctio fuga, maiores ad error porro?
-            </p>
-        </section>
+                Na samom početku našeg poslovanja, fokusirali smo se isključivo na detaljno čišćenje enterijera, sa ciljem da dostignemo najviši nivo kvaliteta usluge. Posvećenost, preciznost i kontinuirano usavršavanje rezultirali su time da, nakon 5 godina iskustva, postanemo lideri u pružanju high-level usluge čišćenja u Nišu i okolini.
+
+                Ono što nas izdvaja jeste činjenica da posedujemo licencu za skidanje sedišta uz očuvanje fabričke garancije vozila, što našim klijentima garantuje maksimalnu sigurnost i kvalitet usluge. Tokom zimskih meseci, koristimo specijalizovane mašine za sušenje, osiguravajući da vaš automobil bude potpuno suv i savršeno čist nakon tretmana.
+                
+                Kod nas ne dobijate samo čisto vozilo, već vrhunsku uslugu koja podrazumeva pažnju prema svakom detalju. Ponosni smo što pružamo iskustvo koje se ne može pronaći na drugim mestima u regionu. Vaše zadovoljstvo i poverenje su naš najveći prioritet!        </section>
         <section id="video" class="video-section">
             <h2>Kako mi to radimo</h2>
             <div class="video-container">
@@ -72,49 +80,51 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-description">
-                    <h3>Naš tim</h3>
-                    <!--TODO Skloni ovaj P tag i stavi <ul> sa <li> elementi -->
-                    <!-- <p>Dubinsko čišćenje podrazumeva sledece:<br><br>●PRANJE UVEALE VRATA<br>●PRANJE KEDERA<br>●PRANJE KEDERA IZA PROZORA<br>●DETALJNO ODMAŠĆIVANJE STAKALA<br>●VAĐENJE SEDIŠTA<br>●ČIŠĆENJE ŠINA NA SEDIŠTIMA<br>●DUBINSKO PRANJE SEDIŠTA AKO SU OD STOFA, AKO SU OD KOŽE DETALJNO ČIŠĆENJE I APLICIRANJE KERAMIČKE ZAŠTITE U TRAJANJU DO 3 MESECA<br>●DETALJNO ČIŠĆENJE SVIH PLASTIKA U AUTU I APLICIRANJE KERAMIČKE ZAŠTITE U TRAJANJU DO 3 MESECA<br>●DETALJNO ČIŠĆENJE POJASEVA<br>●DUBINSKO PRANJE PODA<br>●SUŠENJE SEDIŠTA<br>●DEZINFEKCIJA KLIME<br>●OZONACIJA PROSTORA KOJA DEZINFIKUJE CEO ENTERIJER U AUTOMOBILU I UBIJA 99.99% BAKTERIJA, SKIDA DNK OTISKE PRSTIJU ETC.<br>●ČIŠĆENJE PANORAME ILI ŠIBERA<br>●DETALJNO SPOLJNO PRANJE (FELNI, PODKRILA, SPOLJNIH KEDERA), APLICIRANJE KERAMIČKE ZAŠTITE NA ŠOFERCI ZA SIGURNIJU I LAKŠU VOŽNJU<br>●ČIŠĆENJE MOTOROG PROSTORA<br>●ČIŠĆENJE NEBA AKO JE TO POTREBNO UZ NAJSIGURNIJU METODU DA NE BI PALO</p> -->
+                    <!-- <h3>Od usluga nudimo</h3> -->
+                    <!-- <ul><span class="videoSecSub">Dubinsko čišćenje podrazumeva sledece:</span> -->
+                    <ul>DUBINSKO ČIŠĆENJE PODRAZUMEVA SLEDEĆE:
+                       <li>Pranje uvale vrata</li>
+                       <li>Pranje kedera</li>
+                       <li>Pranje iza prozora kedera</li>
+                       <li>Detaljno odmašćivanje stakala</li>
+                       <li>Vadjenje sedišta</li>
+                       <li>Čišćenje šina na sedištima</li>
+                       <li>Za sedišta od štofa nudimo dubinsko pranje, dok za kožna sedišta pružamo detaljno čišćenje i keramičku zaštitu koja produžava vek trajanja, štiti od habanja i vraća sjaj.</li>
+                       <li>Detaljno cišćenje svih plastika u autu i apliciranje keramičke zaštite</li>
+                       <li>Detaljno cišćenje pojaseva</li>
+                       <li>Dubinsko pranje poda</li>
+                       <li>Sušenje sedišta </li>
+                       <li>Dezinfekcija klime</li>
+                       <li>Ozonacija prostora koja dezinfikuje ceo enterijer u automobilu i ubija 99.99% bakterija, skida DNK otiske prstiju etc.  </li>
+                       <li>Čišćenje panorame ili šibera</li>
+                       <li>Detaljno spoljno pranje (felni,podkrila,spoljnih kedera) apliciranje keramičke zaštite na šoferci za sigurniju i lakšu vožnju</li>
+                       <li>Čišćenje motornog prostora</li>
+                       <li>Čišćenje neba ako je to potrebno uz najsigurniju metodu bez rizika od pada</li>
+                    </ul>
                 </div>
             </div>
         </section>
-        <!-- <h2 class="gallery-heading">Galerija</h2>
-        <p class="gallery-subheading">
-           Nase zadovoljne musterije
-        </p>
-    <div class="gallery-container">
-        <button class="gallery-arrow left-arrow">&lt;</button>
-        <div class="gallery-slider">
-        <div class="gallery-slide"><img src="slike/flipcard1.jpg" alt="Image 1"></div>
-        <div class="gallery-slide"><img src="slike/flipcard2.jpg" alt="Image 2"></div>
-        <div class="gallery-slide"><img src="slike/flipcard3.jpg" alt="Image 3"></div>
-        <div class="gallery-slide"><img src="slike/flipcard4.jpg" alt="Image 4"></div>
-    </div>
-    <button class="gallery-arrow right-arrow">&gt;</button>
-  </div>
-  </section>
-           -->
-  <div class="img-grid">
-    <img class ="img-grid-row-2 img-grid-col-2"src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img class="img-grid-col-2" src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img class="img-grid-row-2" src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">  
-    <img class="img-grid-column-2" src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> 
-    <img src="https://images.unsplash.com/photo-1726108954014-71ffe50f8a26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> 
+  <div id="gallery" class="img-grid">
+    <img class ="img-grid-row-2 img-grid-col-2"src="/slike/pic1.jpg">
+    <img src="/slike/8Y0A9421.jpg">
+    <img src="/slike/IMG_6061.jpg">
+    <img src="/slike/8Y0A9415.jpg">  
+    <img src="/slike/IMG_6002.jpg">  
+    <img src="/slike/8Y0A9440.jpg">  
+    <img src="/slike/flipcard4.jpg">  
+    <img class="img-grid-col-2" src="/slike/8Y0A9446.jpg">  
+    <img class="img-grid-row-2" src="/slike/flipcard1.jpg">  
+    <img src="/slike/8Y0A9448.jpg">  
+    <img src="/slike/8Y0A9548.jpg">  
+    <img src="/slike/8Y0A9453.jpg">  
+    <img class="img-grid-column-2" src="/slike/8Y0A9451.jpg">
+    <img src="/slike/background.jpg"> 
+    <img src="/slike/IMG_6002.jpg"> 
   </div>
   <section id="product" class="product-section">
     <p class="podnaslov">U NAŠOJ PONUDI</p>
 </section>
-<section class="flip-card-section">
+<section id="product" class="flip-card-section">
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -123,9 +133,7 @@
             <div class="flip-card-back">
                 <p class="nazad1">O PONUDI</p>
                 <ul>
-                    <li>Profesionalno poliranje</li>
-                    <li>Zaštita sa keramičkim premazom</li>
-                    <li>Čišćenje teško dostupnih delova</li>
+                    Demontiramo sve delove enterijera koji je potrebno očistiti, pružajući dubinsko čišćenje na najvišem nivou i na potpuno siguran način. Naša pažnja prema detaljima i upotreba profesionalne opreme garantuju vrhunske rezultate, uz očuvanje integriteta vašeg vozila.
                 </ul>
             </div>
         </div>
@@ -138,10 +146,7 @@
             <div class="flip-card-back">
                 <p class="nazad2">O PONUDI</p>
                 <ul>
-                    <li>Dubinsko pranje sedišta</li>
-                    <li>Čišćenje šina na sedištima</li>
-                    <li>Odmašćivanje staklenih površina</li>
-                    <li>Ozonacija enterijera</li>
+                    Pružamo najbolju moguću zaštitu za sjajne plastike i multimedijalne površine u enterijeru vašeg vozila. Naša specijalizovana sredstva čuvaju njihov sjaj, sprečavaju ogrebotine i produžavaju trajnost, ostavljajući vaš enterijer besprekorno čistim i zaštićenim.
                 </ul>
             </div>
         </div>
@@ -154,9 +159,7 @@
             <div class="flip-card-back">
                 <p class="nazad3">O PONUDI</p>
                 <ul>
-                    <li>Pranje kedere i podkrila</li>
-                    <li>Odmašćivanje staklenih površina</li>
-                    <li>Primena pH neutralnih sredstava</li>
+                    Poliramo piano plastike, instrument tablu i multimedijalne površine kako bismo vaš enterijer doveli do savršenstva. Naša precizna tehnika poliranja vraća originalni sjaj i eliminiše sitne ogrebotine, čineći da vaš enterijer izgleda kao nov.
                 </ul>
             </div>
         </div>
@@ -169,9 +172,7 @@
             <div class="flip-card-back">
                 <p class="nazad4">O PONUDI</p>
                 <ul>
-                    <li>Detoksikacija i dezinfekcija klime</li>
-                    <li>Detaljno čišćenje plastike</li>
-                    <li>Zaštita sa antistatičkim sredstvima</li>
+                    Temeljno peremo kompletnu spoljašnjost vozila kako bismo upotpunili uslugu i osigurali da vaše vozilo bude savršeno čisto, i spolja i iznutra. Naš cilj je da vaš automobil izgleda besprekorno u svakom detalju!
                 </ul>
             </div>
         </div>
@@ -182,37 +183,39 @@
         <footer class="footer">
             <div class="footer-content">
                 <p class="opis">Pratite nas i kontaktirajte na društvenim mrežama</p>
+                <div class="contact-info-mob">
+                    <p>Email: <a href="mailto:info@lucidodetailing.com">info@lucidodetailing.com</a></p>
+                    <p>Telefon: <a href="tel:+381601234567">+381 60 123 4567</a></p>
+                </div>
                 <div class="footer-social-icons">
-                    <a href="https://www.facebook.com" target="_blank" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="https://api.whatsapp.com/send?phone=0658828422" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
                     </a>
-                    <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <a href="https://www.instagram.com/lucidodetailing/" target="_blank" class="social-icon">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.twitter.com" target="_blank" class="social-icon">
-                        <i class="fab fa-twitter"></i>
+                    <a href="mailto:Lucidoo2024@gmail.com" target="_blank" class="social-icon">
+                        <i class="fa-solid fa-envelope"></i>
                     </a>
-                    <a href="https://www.linkedin.com" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.tiktok.com/@lucidodetailing" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-tiktok"></i>
                     </a>
                 </div>
-                <p class="tag">Design by @zoovie 2024</p> 
+                <p class="tag">Design by @zoovie2024</p> 
             </div>
         </footer>
         
-        <!-- Font Awesome Link for Icons -->
         <script src="https://kit.fontawesome.com/737616ad0b.js" crossorigin="anonymous"></script>
         <script src="main.js"></script>
         <script>
             window.addEventListener("scroll", function () {
                 const navbar = document.querySelector(".navbar");
-                if (window.scrollY > 50) { // Kada je skrol veći od 50px
+                if (window.scrollY > 50) {
                     navbar.classList.add("transparent");
                 } else {
                     navbar.classList.remove("transparent");
                 }
             });
         </script>
-        
     </body>
     </html>

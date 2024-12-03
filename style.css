@@ -1,144 +1,233 @@
+:root{
+    --border-radius:8px;
+}
+html {
+    scroll-behavior:smooth;
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #16283b;
-    margin: 0;
+    font-family:"DM Sans", sans-serif;
+    background-color:#16283b;
+    margin:0;
+}
+.navbar {
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    background-color:rgba(34, 73, 106, 1);
+    padding:10px 10px;
+    text-align:center;
+    width:fit-content;
+    margin:20px auto;
+    border-radius:var(--border-radius);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index:10;
+    transition:background-color 0.3s ease;
 }
 
-.navbar {
-    position: fixed; /* Fixed position to keep it visible during scrolling */
-    top: 0; /* Stick to the top */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(34, 73, 106, 0.9); /* Slight transparency */
-    padding: 10px 10px;
-    text-align: center;
-    width: fit-content;
-    margin: 20px auto;
-    border-radius: 25px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 10; /* Ensures it stays on top of other content */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+.transparent{
+    background-color:rgba(34, 73, 106, .7);
 }
 .navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    gap:20px;
 }
 
 .navbar li {
-    display: inline;
+    display:inline;
 }
 
 .navbar a {
+    color:#f3f7fc;
+    text-decoration:none;
+    font-size:1em;
+    padding:5px 15px;
+    position:relative;
+    border-radius:10px;
+    transition:color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+.navbar a:hover {
+    color:#1f1e24;
+    background-color:#c8deef;
+    transform:scale(1.1);
+}
+.navbar a:hover::after {
+    transform:scaleX(1);
+    transform-origin: bottom left;
+}
+.burger-icon {
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+}
+
+.burger-icon span {
+    background-color: #f3f7fc;
+    height: 4px;
+    width: 30px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.burger-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6.5px, 6.5px);
+}
+
+.burger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6.5px, -6.5px);
+}
+.burger-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(34, 73, 106, 1);
+    padding: 15px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: right 0.3s ease;
+}
+
+.burger-nav.active {
+    right: 0;
+}
+.burger-nav li{
+    list-style-type: none;
+}
+.burger-nav a {
     color: #f3f7fc;
     text-decoration: none;
-    font-size: 1em;
-    padding: 5px 15px; /* Dodaj padding za više prostora oko linka */
-    position: relative;
-    border-radius: 15px; /* Zaobljeni uglovi pozadine */
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Dodaj tranziciju za sve efekte */
+    font-size: 1.2rem;
 }
 
+@media (max-width: 768px) {
+    .burger-icon {
+        display: flex;
+    }
 
-.navbar a:hover {
-    color: #1f1e24; /* Menja boju teksta */
-    background-color: #c8deef; /* boja za hover */
-    transform: scale(1.1);
-}
-
-/* Dodavanje podvlačenja koristeći pseudo-element ( za ne daj boze
-.navbar a::after {
-    content: "";
-    position: absolute;
-    bottom: 4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    /* transform: scaleX(0); Početno stanje - linija skrivena */
-    /* transform-origin: bottom right; */
-    /* transition: transform 0.3s ease; Tranzicija za podvlačenje */
-/* } */ 
-
-.navbar a:hover::after {
-    transform: scaleX(1); /* Prikazivanje linije na hover */
-    transform-origin: bottom left;
+    .navbar {
+        display: none;
+    }
 }
 
 
 .hero-section {
     position: relative;
-    padding: 40px 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns content to the right */
-    justify-content: center; /* Centers vertically */
-    background-image: url(/slike/car.jpg);
+    padding: 30px 60px;
+    background-image:
+    linear-gradient(to bottom, rgba(38, 39, 39, 0.52), rgba(8, 8, 8, 0.73)),
+    url('./slike/car.jpg');
     background-size: cover;
     height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero-section h1 {
-    position: relative;
-    color: #c8deef;
-    z-index: 2;
-    font-size: 3.5rem;
-    margin: 0;/* Removes padding to keep it close to the subheading */
-    /* margin-right: 20px; */
-    margin-top: -240px;
-    background-color: black;
-    padding:5px;
+    margin-top: 200px;
+    color: #e3eaf0;
+    font-size: 6rem;
+
 }
 .first-word {
-    color:  #98c1e1; /* Change this to the desired color */
+    color:  #98c1e1;
     font-family: 'Exo 2', sans-serif;
-    font-size: 3.5rem;
-    padding: 10px;
 }
 
 
 .subheading {
     position: relative;
-    color: #c8deef;
-    font-size: 1.5rem;
-    margin-top: 10px;
-    z-index: 2;
-    padding: 20px;
-    margin-right: 0px;
-    margin-top: -10px;
-    background-color: black;
+    color:#e3eaf0c7;
+    font-size: 1.25rem;
+
+}
+.contact-info {
+    color: white;
+}
+
+.contact-info a {
+    position: relative;
+    color: #98c1e1;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a::after {
+    content: '';
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(130, 182, 221, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(0.95);
+}
+
+.contact-info a:hover {
+    color: #28a1fd;
 }
 .extra-text {
     position: absolute;
-    bottom: 100px; /* Increase this value to move it higher */
-    right: 60px; /* Increase this value to move it more to the left */  
+    bottom: 50px;
+    right: 50px;
     color: #fff;
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 1rem;
-    z-index: 2; /* Ensure it appears above the background */
+}
+.cta-button{
+    border: none;
+    border-radius: 8px;
+    background:linear-gradient(145deg, #e2e8f0, #cbd5e0);
+    color: #2d3748;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.cta-button:hover {
+    background: linear-gradient(145deg, #cbd5e0, #e2e8f0);
+    transform: translateY(-2px);
 }
 
+.cta-button:active {
+    background: linear-gradient(145deg, #cbd5e0, #a0aec0);
+    transform: translateY(0);
+}
 .card {
-    /* color used to softly clip top and bottom of the .words container */
-    --bg-color: rgb(0, 0, 0);
+    --bg-color: rgba(0, 0, 0, 0.466);
     background-color: var(--bg-color);
     padding: 1rem 2rem;
     border-radius: 1.25rem;
   }
   .loader {
     color: rgb(255, 255, 255);
-    font-family: "Poppins", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
     -webkit-box-sizing: content-box;
@@ -150,22 +239,20 @@ body {
     display: flex;
     border-radius: 8px;
   }
-  
   .words {
     overflow: hidden;
     position: relative;
-    background: none; /* Ensure no background color is applied */
+    background: none;
     font-size: 1.5rem;
   }
   .words::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: none; /* Remove the gradient background */
+    background: none;
     z-index: 20;
 }
-  
-  .word {
+.word {
     display: block;
     height: 100%;
     padding-left: 6px;
@@ -207,24 +294,19 @@ body {
         transform: translateY(-400%);
     }
     100% {
-        -webkit-transform: translateY(0); /* Return to the start position */
+        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 }
 
 .about-section {
-    background-color:#3d85ba;
-    /* background-image:url(slike/proba.avif); */
-    background-size: cover;
-    background-position: center;
     padding: 40px;
     color: white;
-    text-align: center;
-    width: 70%;
+    text-align:center;
+    justify-content:center;
+    width: 90%;
     margin: 20px auto;
-    background-image: linear-gradient(to right,#02223d, #3d85ba);
     line-height: 1.8;
-    border-radius: 10px;
 }
 
 .about-section h2 {
@@ -235,38 +317,40 @@ body {
 }
 
 .about-section p {
-    font-size: 1rem;
-    text-align: start;
-    line-height: 1.8;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    max-width: 800px; /* maksimalna širina za poboljšanje čitljivosti */
-    margin-left: auto;
-    margin-right: auto;
+    font-size:1.1rem;
+    text-align:center;
+    line-height:1.8;
+    margin-top:10px;
+    margin-bottom:20px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
 }
- /* Video Section Styles */
  .video-section {
-    background-color: #16283b;
-    background-image: url(slike/proba1.avif);
-    padding: 40px 20px; /* Increased padding */
+    background-color:#16283b;
+    background-image:url(slike/proba1.avif);
+    padding:40px 20px;
     text-align: center;
-    color: white;
-    width: 100%;
-    margin: 20px auto;
+    color:white;
+    width:100%;
+    margin:20px auto;
 }
 
 .video-section h2 {
-    font-size: 2em; /* Slightly larger font size */
-    margin-bottom: 25px;
-    color: #ffffff;
+    font-size:3em;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.801);
-    padding: 10px; /* Adds padding for better spacing around text */
-    display: inline-block; /* Ensures width doesn't stretch to the full width */
-    border-radius: 8px; /* Optional: Rounds the corners of the h2 background */
-    max-width: 100%; /* Ensures h2 doesn't exceed its container's width */
+    margin-bottom:25px;
+    color:#1b405a;
+    font-weight: bold;
+    padding: 10px;
+    display:inline-block;
+    border-radius:8px;
+    max-width:100%;
 }
-
+/* .videoSecSub{
+    font-weight:bold;
+    font-size: 1.1rem;
+} */
 .video-container {
     display: flex;
     flex-wrap: wrap;
@@ -276,121 +360,142 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px; /* Increased padding for a cleaner look */
-    background-color: #213e59;
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Softer, larger shadow for depth */
+    padding: 30px;
+    background-color: #213e5962;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .video-container video {
     width: 65%;
     max-width: 700px;
+    height:700px;
     background-color: #c8deef33;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Enhanced shadow for the video */
 }
 
 .video-description {
     width: 30%;
     max-width: 300px;
     text-align: left;
-    color: #d0e5f5; /* Softer, slightly lighter text color */
+    color: #e9eef1;
 }
 
 .video-description h3 {
-    font-size: 1.6em; /* Slightly larger title */
+    font-size: 2em;
     margin-bottom: 15px;
+    font-weight: bold;
     color: #ffffff;
 }
-
-.video-description p {
-    font-size: 1.1em; /* Slightly larger font size */
-    line-height: 1.6;
+.video-description ul{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px 10px;
 }
-
-/* Responsive adjustments */
+.video-description li{
+    font-size: 1rem;
+    color:rgb(231, 236, 241);
+    font-weight:lighter;
+}
+.video-description p {
+    font-size:1.1em;
+    line-height:1.6;
+}
 @media (max-width: 768px) {
     .video-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction:column;
+        align-items:center;
     }
     .video-container video, .video-description {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
+        width:100%;
+        max-width:100%;
+        text-align:center;
     }
 }
-
 .product-section {
-    text-align: center;
-    margin: 20px auto;
-}
-.product-section button {
-    padding: 15px 30px;
-    font-size: 1em;
-    border: none;
-    background-color: #d0d0d0;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-.product-section button:hover {
-    background-color: #b0b0b0;
-    transform: translateY(-3px); /* Podizanje dugmeta */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Dodaj senku za efekat lebdenja */
-    border-radius: 10px;
+    text-align:center;
+    margin:20px auto;
 }
 .content-section {
-    display: flex;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    padding:20px;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    align-items:center;
+    justify-content:center;
 }
 .content-section p {
-    flex: 1;
-    font-size: 0.9em;
-    color: #555;
-    padding: 0 20px;
+    flex:1;
+    font-size:0.9em;
+    color:#555;
+    padding:0 20px;
 }
 .image-placeholder {
-    width: 150px;
-    height: 150px;
-    background-color: #ccc;
-    margin-right: 20px;
+    width:150px;
+    height:150px;
+    background-color:#ccc;
+    margin-right:20px;
 }
 .reverse .image-placeholder {
-    order: 2;
-    margin-left: 20px;
-    margin-right: 0;
+    order:2;
+    margin-left:20px;
+    margin-right:0;
 }
+.img-grid{
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height:300px;
 
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+    
 
+}
+.img-grid > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius:var(--border-radius);
+    filter:grayscale(100%);
+    transition:all 0.3s ease-in-out;
+}
+.img-grid > img:hover{
+    filter: none;
+}
+.img-grid-col-2{
+    grid-column: span 2;
+}
+.img-grid-row-2{
+    grid-row: span 2;
+}
+@media screen and (max-width: 1024px){
+    .img-grid{
+        --num-cols:2;
+        --row-height:200px;
+    }
+}
 .flip-card-section {
     display: flex;
-    justify-content: space-around; /* Ensures equal spacing between cards */
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 15px; /* Smanjen razmak između kartica */
+    flex-wrap: wrap;
+    gap: 15px;
     padding: 40px;
-    background-image: linear-gradient(to bottom, #234769, #16283b); /* Dodan linearni gradijent */
-    background-color: #16283b; /* Rezervna boja ako gradijent nije podržan */
-    border-radius: 15px; /* Dodaje zaobljene uglove za sekciju */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Dodaje blag efekat senke */
+    background-image: linear-gradient(to bottom, #234769, #16283b);
+    background-color: #16283b;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
 }
-
-
-
 .flip-card {
     background-color: transparent;
-    width: 250px; /* Adjust card width */
-    height: 350px; /* Adjust card height */
-    perspective: 1000px; /* Create a 3D perspective */
-    margin: 5px; /* Smanjen razmak između kartica */
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    margin: 5px;
 }
-
-
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -399,86 +504,69 @@ body {
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
-
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg); /* Flip the card on hover */
+    transform: rotateY(180deg);
 }
-
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hide the back face when not visible */
+    backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 10px; /* Rounded corners */
+    border-radius:var(--border-radius);
     background-image: linear-gradient(to bottom, #38638b, #0f304e);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .flip-card-front {
-    background-color: #3d85ba; /* Front face color */
+    background-color: #3d85ba;
     color: white;
 }
-
 .flip-card-back {
     background-color:#25557f;
     color: white;
-    transform: rotateY(180deg); /* Position the back side initially */
+    transform: rotateY(180deg);
+    padding: 10px;
+    
 }
-
-/* .flip-card p.title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.flip-card p {
-    font-size: 1rem;
-    margin: 10px;
-} */
-
 .flip-card:nth-child(1) .flip-card-front {
-    background-image: url(slike/flipcard1.jpg);
+    background-image: url(slike/enterier1.avif);
     background-position: center;
     background-size: cover;
 }
-
 .flip-card:nth-child(1) .flip-card-back {
     background-color:#25557f;
 }
-
 .flip-card:nth-child(2) .flip-card-front {
-    background-image: url(slike/flipcard2.jpg);
+    background-image: url(slike/ppf.jpg);
     background-position: center;
-    background-size: cover;
+    background-size:cover;
 }
-
 .flip-card:nth-child(2) .flip-card-back {
     background-color:#25557f;
 }
 
 .flip-card:nth-child(3) .flip-card-front {
-    background-image: url(slike/flipcard3.jpg);
-    background-position: center;
-    background-size: cover;
+    background-image: url(slike/polent.jpg);
+    background-position:center;
+    background-size:cover;
+    overflow: hidden;
 }
 
 .flip-card:nth-child(3) .flip-card-back {
     background-color:#25557f;
 }
-
 .flip-card:nth-child(4) .flip-card-front {
     background-image: url(slike/flipcard4.jpg);
-    background-position: center;
+    background-position:center;
     background-size: cover;
 }
 
 .flip-card:nth-child(4) .flip-card-back {
     background-color:#25557f;
 }
-/* General styles for all front and back card text */
 .flip-card-front p,
 .flip-card-back p {
     margin: 10;
@@ -486,49 +574,42 @@ body {
     text-align: center;
     font-weight: bold;
 }
-
-/* Specific styles for front card text */
 .napred1 {
     font-size: 2rem;
     color: #e6eff8;;
     margin-top: 50px;
-    border-bottom: solid white 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
-    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
 }
 
 .napred2 {
     font-size: 2rem;
     color: #e6eff8;;
     margin-top: 50px;
-    border-bottom: solid white 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
-    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
 }
 
 .napred3 {
     font-size: 2rem;
     color: #e6eff8;;
     margin-top: 50px;
-    border-bottom: solid white 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
-    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
 }
 
 .napred4 {
     font-size: 2rem;
     color: #e6eff8;;
     margin-top: 50px;
-    border-bottom: solid white 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
-    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
 }
 
-/* Specific styles for back card text */
 .nazad1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #e6eff8;
-    margin-top: 30px; /* Moves text slightly down */
+    margin-top: 30px;
 }
 
 .nazad2 {
@@ -549,47 +630,100 @@ body {
     margin-top: 15px;
 }
 
-/* Adjust alignment for all card text */
 .flip-card-front,
 .flip-card-back {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: flex-start; /* Start from top */
-    padding-top: 10px; /* Add some space from the top */
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+.flip-card-back ul{
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.flip-card-back li{
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #e6eff8;
+    text-align: center;
 }
 
-/* .flip-card-front p:hover,
-.flip-card-back p:hover {
-    color: #ffcc00;
-    transform: translateY(-5px);
-    transition: transform 0.3s ease, color 0.3s ease;
-} */
-
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
+    .hero-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:20px 40px;
+    }
+    .hero-section h1 {
+        font-size: 3.5rem;
+        text-align:center;
+        margin-top:150px;
+    }
+    .navbar{
+        display:none;
+    }
+    .subheading{
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .cta-button{
+        margin-top: 30px;
+    }
+    .contact-info{
+        display: none;
+    }
+    .loader, .words{
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius:var(--border-radius);
+    }
+    .loader{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height:60px;
+        text-align: center;
+    }
+    .extra-text{
+        position: static;
+        margin-top:200px;
+        padding: 0;
+        border-radius:var(--border-radius);
+    }
+    .card{
+        border-radius:var(--border-radius);
+    }
+    .word{
+        padding-left: 0;
+        display: block;
+    }
+    .img-grid > img{
+        filter: none;
+    }
     .flip-card-section {
-        flex-direction: column; /* Stack cards vertically */
+        flex-direction: column;
         gap: 30px;
     }
 
     .flip-card {
-        width: 80%; /* Make cards responsive */
-        height: auto;
+        width: 80%;
     }
 }
 .podnaslov{
     font-size: 2em;
-    /* margin-bottom: 25px; */
     color: #ffffff;
     font-weight: bold;
-    /* font-weight: bold;
-    background-color:#25557f; */
-    padding: 10px; /* Adds padding for better spacing around text */
-    display: inline-block; /* Ensures width doesn't stretch to the full width */
-    border-radius: 8px; /* Optional: Rounds the corners of the h2 background */
-    max-width: 100%; /* Ensures h2 doesn't exceed its container's width */
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    max-width: 100%;
 }
 .footer {
     background-color: #234769;
@@ -606,13 +740,13 @@ body {
     align-items: center;
     gap: 15px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto;  
 }
 
 .footer-social-icons {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    gap:20px;
+    justify-content:center;
 }
 
 .footer-social-icons a {
@@ -630,7 +764,7 @@ body {
 }
 
 .footer-social-icons a:hover {
-    transform: translateY(-5px); /* Move icon up slightly on hover */
+    transform: translateY(-5px);
     background-color: #ffffff;
     color: #234769;
 }
@@ -644,4 +778,7 @@ body {
 }
 .tag{
     font-size: 1rem;
+}
+.contact-info-mob{
+    display: none;
 }
