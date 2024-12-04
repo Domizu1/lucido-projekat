@@ -693,7 +693,7 @@ body {
     }
     .extra-text{
         position: static;
-        margin-top:175px;
+        margin-top:170px;
         padding: 0;
         border-radius:var(--border-radius);
     }
