@@ -136,7 +136,7 @@ body {
     padding: 30px 60px;
     background-image:
     linear-gradient(to bottom, rgba(38, 39, 39, 0.52), rgba(8, 8, 8, 0.73)),
-    url('./slike/car.jpg');
+    url('./slike/hero.webp');
     background-size: cover;
     height: 100vh;
     background-position:center;
@@ -328,7 +328,7 @@ body {
 }
  .video-section {
     background-color:#16283b;
-    background-image:url(slike/proba1.avif);
+    background-image:url(slike/proba1.webp);
     padding:40px 20px;
     text-align: center;
     color:white;

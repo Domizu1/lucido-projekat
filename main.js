@@ -11,18 +11,8 @@ function scrollToProduct() {
         behavior: "smooth"
     });
 }
-
-// document.querySelectorAll('.flip-card').forEach(card => {
-//     card.addEventListener('click', () => {
-//         const innerCard = card.querySelector('.flip-card-inner');
-//         innerCard.classList.toggle('active');
-//     });
-// });
-
 document.querySelectorAll('.flip-card').forEach(card => {
     const innerCard = card.querySelector('.flip-card-inner');
-
-    // Flip card on click
     card.addEventListener('click', (e) => {
         e.stopPropagation();
         innerCard.classList.toggle('active');
