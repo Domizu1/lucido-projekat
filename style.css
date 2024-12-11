@@ -540,7 +540,7 @@ body {
     background-color:#25557f;
 }
 .flip-card:nth-child(2) .flip-card-front {
-    background-image: url(slike/ppf.jpg);
+    background-image: url(slike/ppfnew.webp);
     background-position: center;
     background-size:cover;
 }
@@ -549,7 +549,7 @@ body {
 }
 
 .flip-card:nth-child(3) .flip-card-front {
-    background-image: url(slike/polent.jpg);
+    background-image: url(slike/dugackaslika.webp);
     background-position:center;
     background-size:cover;
     overflow: hidden;
@@ -559,7 +559,7 @@ body {
     background-color:#25557f;
 }
 .flip-card:nth-child(4) .flip-card-front {
-    background-image: url(slike/flipcard4.jpg);
+    background-image: url(slike/flipcard4new.webp);
     background-position:center;
     background-size: cover;
 }
